@@ -21,7 +21,7 @@
   </div>
   <div class="col">
     <p class="life-container" *ngFor="let item of items; let i = index" (click)="removerItem(i)">
-      {{ item }}
+      {{ item | json }}
     </p>
   </div>
 </div>

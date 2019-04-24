@@ -40,19 +40,21 @@ export class HomeComponent implements OnInit {
   constructor(private _data: DataService) { }
 
   ngOnInit() {
-    this._data.item.subscribe(res => this.items = res);
-    this._data.cambiarItem(this.items);
+    this._data.book.subscribe(res => this.items = res);
+    this._data.cambiarLibro(this.items);
+    
   }
 
   addItem(){
     this.items.push(this.itemText);
+    console.log(this.itemText);
     this.itemText = '';
-    this._data.cambiarItem(this.items);
+    this._data.cambiarLibro(this.items);
   }
 
   removerItem(i){
     this.items.splice(i, 1);
-    this._data.cambiarItem(this.items);
+    this._data.cambiarLibro(this.items);
   }
 
  /* upJson(){

@@ -16,7 +16,7 @@ export class AboutComponent implements OnInit {
    }
 
   ngOnInit() {
-    this._data.item.subscribe(res => this.items = res);
+    this._data.book.subscribe(res => this.items = res);
   }
 
   palHome(){

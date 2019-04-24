@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import * as jsss from './books.json';
+
 
 @Injectable()
 export class DataService {
 
-  private items = new BehaviorSubject<any>(['Primer item', 'Otro item']);
-  item = this.items.asObservable();
+  private books = new BehaviorSubject<any>(jsss);
+  book = this.books.asObservable();
+  
 
   constructor() { }
 
-  cambiarItem(item){
+  cambiarLibro(book){
 
-    this.items.next(item);
+    this.books.next(book);
+    
   }
 }
+
 
 
